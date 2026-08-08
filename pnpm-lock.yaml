@@ -11,6 +11,9 @@ importers:
       vue:
         specifier: ^3.5.40
         version: 3.5.41(typescript@6.0.3)
+      vue-facing-decorator:
+        specifier: ^4.0.1
+        version: 4.0.1(vue@3.5.41(typescript@6.0.3))
     devDependencies:
       '@tsconfig/node24':
         specifier: ^24.0.4
@@ -473,6 +476,9 @@ packages:
   estree-walker@2.0.2:
     resolution: {integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==}
 
+  facing-metadata@2.0.3:
+    resolution: {integrity: sha512-cznIFYEbjy5LCph7aolYr6+5B1PzJAPsW4q3xdsmJDdZgsepFCBq4vZkBgCGt2LZZKNwji0Qt1xU24JOqg/6xQ==}
+
   fdir@6.5.0:
     resolution: {integrity: sha512-tIbYtZbucOs0BRGqPJkshJUYdL+SDH7dVM8gjy+ERp3WAUjLEFJE+02kanyHtwjWOnwrKYBiwAmM0p4kLJAnXg==}
     engines: {node: '>=12.0.0'}
@@ -834,6 +840,11 @@ packages:
 
   vscode-uri@3.1.0:
     resolution: {integrity: sha512-/BpdSx+yCQGnCvecbyXdxHDkuk55/G3xwnC0GqY4gmQ3j+A+g8kzzgB4Nk/SINjqn6+waqw3EgbVF2QKExkRxQ==}
+
+  vue-facing-decorator@4.0.1:
+    resolution: {integrity: sha512-zBvPoiXVVCOSctoKmcYUHFu2qu0AGYAZOfT6LnPqcrSSOpElTJTd21cOIrGrnA1rYwzlp8jhQLmlcBKv1ETNRA==}
+    peerDependencies:
+      vue: ^3.0.0
 
   vue-tsc@3.3.9:
     resolution: {integrity: sha512-TS3Y1ux/IRoE8OCP2PpACAeOseuIs0UvWrcr7u+w3PmfY+SlCfEf8zjrBgnQksHUgLpthi5vHlffcQTQTdPBZA==}
@@ -1324,6 +1335,8 @@ snapshots:
 
   estree-walker@2.0.2: {}
 
+  facing-metadata@2.0.3: {}
+
   fdir@6.5.0(picomatch@4.0.5):
     optionalDependencies:
       picomatch: 4.0.5
@@ -1609,6 +1622,11 @@ snapshots:
       fsevents: 2.3.3
 
   vscode-uri@3.1.0: {}
+
+  vue-facing-decorator@4.0.1(vue@3.5.41(typescript@6.0.3)):
+    dependencies:
+      facing-metadata: 2.0.3
+      vue: 3.5.41(typescript@6.0.3)
 
   vue-tsc@3.3.9(typescript@6.0.3):
     dependencies:

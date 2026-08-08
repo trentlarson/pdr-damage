@@ -2,12 +2,68 @@
 <html lang="">
   <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vite App</title>
+
+    <script>
+      /**
+      reportSample = {
+        vehicle: {
+          "year": "2022", "make": "Toyota", "model": "Camry", "color": "Silver"
+        },
+        "panels": [
+          { "name": "Hood", "dentCount": 24, "dentSize": "Medium", "severity": "Moderate" }, { "name": "Roof", "dentCount": 41, "dentSize": "Small", "severity": "Heavy" }
+        ]
+      };
+      **/
+      fullReport = { panels: [] };
+      function print() {
+        year = document.getElementById("year").value;
+        make = document.getElementById("make").value;
+        model = document.getElementById("model").value;
+        vin = document.getElementById("vin").value;
+        color = document.getElementById("color").value;
+
+        document.getElementById("output").innerHTML = (
+          "Data: "
+          + "" + year + " " + make + " " + model + " " + color + " " + vin
+          + "<br/>"
+          + fullReport.panels.map(
+            (x)=> {return "Panel " + x.name + " with " + x.dentCount + " dents" }
+          ).join(", ")
+        )
+      }
+      function addPanel() {
+        name = document.getElementById("name").value;
+        dentCount = document.getElementById("dentCount").value;
+        fullReport.panels.push(
+          {name: name, dentCount: dentCount}
+        );
+        document.getElementById("output").innerHTML = "Panel added";
+      }
+    </script>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+
+
+ <h1>Damage Report</h1>
+  <p>
+    Year: <input type="text" id="year">
+    Make: <input type="text" id="make">
+    Model: <input type="text" id="model">
+    VIN: <input type="text" id="vin">
+    Color: <input type="text" id="color">
+    <br/>
+    Panels:
+    <div>
+      <span onClick="javascript:addPanel()">+</span>
+      Name <input id="name">
+      Dent Count <input id="dentCount">
+    </div>
+  </p>
+
+  <input type="submit" onClick="javascript: print()"/>
+  <div id="output"></div>
+
+</body>
 </html>
